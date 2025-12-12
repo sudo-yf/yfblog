@@ -1,11 +1,11 @@
 import type { IconMap, SocialLink, Site } from '@/types'
 
 export const SITE: Site = {
-  title: 'enscribe.dev',
+  title: "Yifan's Blog",
   description:
-    'Design engineer and cybersecurity enthusiast based in Los Angeles.',
-  href: 'https://enscribe.dev',
-  author: 'enscribe',
+    '19y/o @SCUT | bedroom pop enthusiast | icyball',
+  href: 'https://sudo-yf.github.io',
+  author: 'yifan',
   locale: 'en-US',
   featuredPostCount: 2,
   postsPerPage: 4,
@@ -32,15 +32,11 @@ export const NAV_LINKS: SocialLink[] = [
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
-    href: 'https://github.com/jktrn',
+    href: 'https://github.com/sudo-yf',
     label: 'GitHub',
   },
   {
-    href: 'https://twitter.com/enscry',
-    label: 'Twitter',
-  },
-  {
-    href: 'mailto:jason@enscribe.dev',
+    href: 'mailto:shiyi20060618@gmail.com',
     label: 'Email',
   },
   {
