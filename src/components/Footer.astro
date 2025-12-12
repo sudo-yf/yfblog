@@ -1,6 +1,5 @@
 ---
-import { SOCIAL_LINKS } from '@/consts'
-import SocialIcons from './SocialIcons.astro'
+import { Icon } from 'astro-icon/components'
 ---
 
 <footer class="py-4">
@@ -9,6 +8,31 @@ import SocialIcons from './SocialIcons.astro'
   >
     <p class="text-muted-foreground text-xs">
       &copy; {new Date().getFullYear()} yifan
-    </p>  <SocialIcons links={SOCIAL_LINKS} />
+    </p>
+    <div class="flex items-center gap-4">
+      {/* GitHub */}
+      <a href="https://github.com/sudo-yf" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-foreground transition-colors">
+          <span class="sr-only">GitHub</span>
+          <Icon name="lucide:github" class="size-5" />
+      </a>
+      {/* Email */}
+      <a href="mailto:yifan_wu@example.com" class="text-muted-foreground hover:text-foreground transition-colors">
+          <span class="sr-only">Email</span>
+          <Icon name="lucide:mail" class="size-5" />
+      </a>
+      {/* WeChat */}
+      <div class="text-muted-foreground hover:text-[#07C160] transition-colors cursor-pointer group/wechat relative">
+          <span class="sr-only">WeChat</span>
+          <Icon name="mdi:wechat" class="size-5" />
+          <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-popover text-popover-foreground text-xs px-2 py-1 rounded border opacity-0 group-hover/wechat:opacity-100 transition-opacity whitespace-nowrap shadow-md pointer-events-none">
+              shiyi20060618
+          </div>
+      </div>
+      {/* RedNote */}
+      <a href="https://xhslink.com/m/40H8Scd7FnX" target="_blank" class="text-muted-foreground hover:text-[#FF2442] transition-colors">
+          <span class="sr-only">RedNote</span>
+          <span class="font-bold text-xs">RedNote</span>
+      </a>
+    </div>
   </div>
 </footer>

@@ -8,7 +8,11 @@ export async function getAllAuthors(): Promise<CollectionEntry<'authors'>[]> {
 export async function getAllPosts(): Promise<CollectionEntry<'blog'>[]> {
   const posts = await getCollection('blog')
   return posts
-    .filter((post) => !post.data.draft && !isSubpost(post.id))
+    .filter(
+      (post) =>
+        !post.data.draft &&
+        (!isSubpost(post.id) || post.id.match(/\/index\.(md|mdx)$/)),
+    )
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
 }
 
@@ -55,7 +59,13 @@ export async function getAdjacentPosts(currentId: string): Promise<{
   if (isSubpost(currentId)) {
     const parentId = getParentId(currentId)
     const allPosts = await getAllPosts()
-    const parent = allPosts.find((post) => post.id === parentId) || null
+    const parent =
+      allPosts.find(
+        (post) =>
+          post.id === parentId ||
+          post.id === `${parentId}/index.md` ||
+          post.id === `${parentId}/index.mdx`,
+      ) || null
 
     const posts = await getCollection('blog')
     const subposts = posts
@@ -63,6 +73,7 @@ export async function getAdjacentPosts(currentId: string): Promise<{
         (post) =>
           isSubpost(post.id) &&
           getParentId(post.id) === parentId &&
+          !post.id.match(/\/index\.(md|mdx)$/) &&
           !post.data.draft,
       )
       .sort((a, b) => {
@@ -138,19 +149,29 @@ export async function getSortedTags(): Promise<
 }
 
 export function getParentId(subpostId: string): string {
+  // If passing an index file, treat its parent as itself (the folder) for the purpose of ID key
+  if (subpostId.match(/\/index\.(md|mdx)$/)) {
+    return subpostId.split('/')[0]
+  }
   return subpostId.split('/')[0]
 }
 
 export async function getSubpostsForParent(
   parentId: string,
 ): Promise<CollectionEntry<'blog'>[]> {
+  // Normalize parentId: if it's an index file, strip the index part
+  const normalizedParentId = parentId.includes('/index.')
+    ? parentId.split('/')[0]
+    : parentId
+
   const posts = await getCollection('blog')
   return posts
     .filter(
       (post) =>
         !post.data.draft &&
         isSubpost(post.id) &&
-        getParentId(post.id) === parentId,
+        getParentId(post.id) === normalizedParentId &&
+        !post.id.match(/\/index\.(md|mdx)$/), // Don't include the index file itself as a subpost
     )
     .sort((a, b) => {
       const dateDiff = a.data.date.valueOf() - b.data.date.valueOf()
@@ -168,7 +189,7 @@ export function groupPostsByYear(
   return posts.reduce(
     (acc: Record<string, CollectionEntry<'blog'>[]>, post) => {
       const year = post.data.date.getFullYear().toString()
-      ;(acc[year] ??= []).push(post)
+        ; (acc[year] ??= []).push(post)
       return acc
     },
     {},
@@ -184,7 +205,7 @@ export function groupProjectsByYear(
       const year = project.data.startDate
         ? project.data.startDate.getFullYear().toString()
         : new Date().getFullYear().toString()
-      ;(acc[year] ??= []).push(project)
+        ; (acc[year] ??= []).push(project)
       return acc
     },
     {},
@@ -197,6 +218,7 @@ export async function hasSubposts(postId: string): Promise<boolean> {
 }
 
 export function isSubpost(postId: string): boolean {
+  if (postId.match(/\/index\.(md|mdx)$/)) return false // Index files are not subposts (they are folders)
   return postId.includes('/')
 }
 
@@ -209,7 +231,14 @@ export async function getParentPost(
 
   const parentId = getParentId(subpostId)
   const allPosts = await getAllPosts()
-  return allPosts.find((post) => post.id === parentId) || null
+  return (
+    allPosts.find(
+      (post) =>
+        post.id === parentId ||
+        post.id === `${parentId}/index.md` ||
+        post.id === `${parentId}/index.mdx`,
+    ) || null
+  )
 }
 
 export async function parseAuthors(authorIds: string[] = []) {

@@ -13,6 +13,7 @@ import rehypePrettyCode from 'rehype-pretty-code'
 import remarkEmoji from 'remark-emoji'
 import remarkMath from 'remark-math'
 import rehypeDocument from 'rehype-document'
+import remarkObsidianImages from './src/lib/remark-obsidian-images'
 
 import tailwindcss from '@tailwindcss/vite'
 
@@ -54,6 +55,6 @@ export default defineConfig({
         },
       ],
     ],
-    remarkPlugins: [remarkMath, remarkEmoji],
+    remarkPlugins: [remarkObsidianImages, remarkMath, remarkEmoji],
   },
 })

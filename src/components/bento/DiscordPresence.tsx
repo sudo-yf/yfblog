@@ -106,10 +106,12 @@ const DecorativeBadges = memo(() => {
 })
 
 const UserInfo = memo(() => (
-  <div className="bg-border/50 flex flex-col gap-y-1 p-3">
-    <span className="text-base leading-none">enscribe</span>
-    <span className="text-muted-foreground text-xs leading-none">
-      @enscribe
+  <div className="flex flex-col mr-4">
+    <span className="text-xl font-bold font-mono tracking-tighter text-foreground">
+      Yifan
+    </span>
+    <span className="text-xs text-muted-foreground font-mono">
+      @sudo_yf
     </span>
   </div>
 ))
