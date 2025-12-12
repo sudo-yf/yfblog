@@ -20,6 +20,9 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   site: 'https://sudo-yf.github.io',
   integrations: [expressiveCode(), mdx(), react(), sitemap(), icon()],
+  build: {
+    assets: 'assets',
+  },
   vite: {
     plugins: [tailwindcss()],
   },
