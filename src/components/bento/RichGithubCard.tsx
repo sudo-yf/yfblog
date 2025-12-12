@@ -17,7 +17,7 @@ const AvatarSection = memo(() => (
     <div className="flex justify-between gap-x-1">
         <div className="relative">
             <AvatarComponent
-                src="/static/bento/avatar.jpg"
+                src="/yfblog/static/bento/avatar.jpg"
                 alt="Avatar"
                 fallback="YF"
                 className="-mt-12 aspect-square grayscale sepia-50 size-16 rounded-full sm:-mt-[4.5rem] sm:size-24"
@@ -43,7 +43,7 @@ const RichGithubCard = memo(() => {
         >
             <div className="grid size-full grid-rows-4">
                 {/* Banner */}
-                <div className="bg-border/25 bg-[url('/static/bento/github-background.png')] bg-cover bg-center bg-no-repeat" />
+                <div className="bg-border/25 bg-[url('/yfblog/static/bento/github-background.png')] bg-cover bg-center bg-no-repeat" />
 
                 <div className="bg-muted row-span-3 flex flex-col gap-3 p-3">
                     <AvatarSection />
@@ -54,7 +54,7 @@ const RichGithubCard = memo(() => {
                         <div className="flex size-full items-center gap-x-2 sm:gap-x-3">
                             <div className="relative aspect-square h-full max-h-12 shrink-0 sm:max-h-16">
                                 <div
-                                    style={{ backgroundImage: `url('/static/bento/bento-discord-futon.svg')` }}
+                                    style={{ backgroundImage: `url('/yfblog/static/bento/bento-discord-futon.svg')` }}
                                     className="absolute inset-0 bg-contain bg-center bg-no-repeat grayscale sepia-50"
                                 />
                             </div>

@@ -14,7 +14,7 @@ const MusicCard = () => {
                 <div
                     className="aspect-square min-h-0 max-w-[60%] flex-shrink border bg-cover bg-center grayscale sepia-50"
                     style={{
-                        backgroundImage: `url('/static/bento/music-cover.jpg')`,
+                        backgroundImage: `url('/yfblog/static/bento/music-cover.jpg')`,
                     }}
                     role="img"
                     aria-label="Album art"

@@ -77,12 +77,12 @@ export async function getAdjacentPosts(currentId: string): Promise<{
           !post.data.draft,
       )
       .sort((a, b) => {
-        const dateDiff = a.data.date.valueOf() - b.data.date.valueOf()
+        const dateDiff = b.data.date.valueOf() - a.data.date.valueOf()
         if (dateDiff !== 0) return dateDiff
 
         const orderA = a.data.order ?? 0
         const orderB = b.data.order ?? 0
-        return orderA - orderB
+        return orderB - orderA
       })
 
     const currentIndex = subposts.findIndex((post) => post.id === currentId)
@@ -91,9 +91,9 @@ export async function getAdjacentPosts(currentId: string): Promise<{
     }
 
     return {
-      newer:
+      newer: currentIndex > 0 ? subposts[currentIndex - 1] : null,
+      older:
         currentIndex < subposts.length - 1 ? subposts[currentIndex + 1] : null,
-      older: currentIndex > 0 ? subposts[currentIndex - 1] : null,
       parent,
     }
   }
@@ -174,12 +174,12 @@ export async function getSubpostsForParent(
         !post.id.match(/\/index\.(md|mdx)$/), // Don't include the index file itself as a subpost
     )
     .sort((a, b) => {
-      const dateDiff = a.data.date.valueOf() - b.data.date.valueOf()
+      const dateDiff = b.data.date.valueOf() - a.data.date.valueOf()
       if (dateDiff !== 0) return dateDiff
 
       const orderA = a.data.order ?? 0
       const orderB = b.data.order ?? 0
-      return orderA - orderB
+      return orderB - orderA
     })
 }
 

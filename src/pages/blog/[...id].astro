@@ -83,23 +83,23 @@ const tocSections = await getTOCSections(currentPostId)
     <div class="col-start-2 hidden sm:block">
       <Breadcrumbs
         items={[
-          { href: '/blog', label: 'Blog', icon: 'lucide:library-big' },
+          { href: '/yfblog/blog', label: 'Blog', icon: 'lucide:library-big' },
           ...(isCurrentSubpost && parentPost
             ? [
                 {
-                  href: `/blog/${parentPost.id}`,
+                  href: `/yfblog/blog/${parentPost.id}`,
                   label: parentPost.data.title,
                   icon: 'lucide:book-open',
                 },
                 {
-                  href: `/blog/${currentPostId}`,
+                  href: `/yfblog/blog/${currentPostId}`,
                   label: post.data.title,
                   icon: 'lucide:file-text',
                 },
               ]
             : [
                 {
-                  href: `/blog/${currentPostId}`,
+                  href: `/yfblog/blog/${currentPostId}`,
                   label: post.data.title,
                   icon: 'lucide:book-open-text',
                 },
@@ -111,23 +111,23 @@ const tocSections = await getTOCSections(currentPostId)
     <div class="col-start-2 sm:hidden">
       <Breadcrumbs
         items={[
-          { href: '/blog', label: 'Blog', icon: 'lucide:library-big' },
+          { href: '/yfblog/blog', label: 'Blog', icon: 'lucide:library-big' },
           ...(isCurrentSubpost && parentPost
             ? [
                 {
-                  href: `/blog/${parentPost.id}`,
+                  href: `/yfblog/blog/${parentPost.id}`,
                   label: 'Post',
                   icon: 'lucide:book-open',
                 },
                 {
-                  href: `/blog/${currentPostId}`,
+                  href: `/yfblog/blog/${currentPostId}`,
                   label: 'Subpost',
                   icon: 'lucide:file-text',
                 },
               ]
             : [
                 {
-                  href: `/blog/${currentPostId}`,
+                  href: `/yfblog/blog/${currentPostId}`,
                   label: 'Post',
                   icon: 'lucide:book-open-text',
                 },
@@ -178,7 +178,7 @@ const tocSections = await getTOCSections(currentPostId)
                     />
                     {author.isRegistered ? (
                       <Link
-                        href={`/authors/${author.id}`}
+                        href={`/yfblog/authors/${author.id}`}
                         underline
                         class="text-foreground"
                       >
@@ -230,7 +230,7 @@ const tocSections = await getTOCSections(currentPostId)
             post.data.tags &&
               post.data.tags.length > 0 &&
               post.data.tags.map((tag) => (
-                <Link href={`/tags/${tag}`}>
+                <Link href={`/yfblog/tags/${tag}`}>
                   <Badge text={tag} />
                 </Link>
               ))
