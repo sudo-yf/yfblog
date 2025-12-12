@@ -178,7 +178,7 @@ const tocSections = await getTOCSections(currentPostId)
                     />
                     {author.isRegistered ? (
                       <Link
-                        href={`/yfblog/authors/${author.id}`}
+                        href={`/authors/${author.id}`}
                         underline
                         class="text-foreground"
                       >
@@ -230,7 +230,7 @@ const tocSections = await getTOCSections(currentPostId)
             post.data.tags &&
               post.data.tags.length > 0 &&
               post.data.tags.map((tag) => (
-                <Link href={`/yfblog/tags/${tag}`}>
+                <Link href={`/tags/${tag}`}>
                   <Badge text={tag} />
                 </Link>
               ))
@@ -238,11 +238,13 @@ const tocSections = await getTOCSections(currentPostId)
         </div>
       </div>
 
-      <PostNavigation
-        newerPost={navigation.newer}
-        olderPost={navigation.older}
-        parentPost={isCurrentSubpost ? navigation.parent : undefined}
-      />
+      <div class="hidden sm:block">
+        <PostNavigation
+          newerPost={navigation.newer}
+          olderPost={navigation.older}
+          parentPost={isCurrentSubpost ? navigation.parent : undefined}
+        />
+      </div>
     </section>
 
     {

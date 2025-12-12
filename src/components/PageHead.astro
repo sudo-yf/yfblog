@@ -12,7 +12,7 @@ const {
   description = SITE.description,
   noindex = false,
 } = Astro.props
-const image = new URL('/yfblog/static/twitter-card.png', Astro.site)
+const image = new URL('/static/twitter-card.png', Astro.url)
 ---
 
 <title>{`${title} | ${SITE.title}`}</title>

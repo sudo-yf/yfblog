@@ -33,13 +33,13 @@ import Favicons from './Favicons.astro'
     media="(prefers-color-scheme: light)"
   />
 
-  <link rel="sitemap" href="/yfblog/sitemap-index.xml" />
-  <link rel="manifest" href="/yfblog/site.webmanifest" />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <link rel="manifest" href="/site.webmanifest" />
   <link
     rel="alternate"
     type="application/rss+xml"
     title={SITE.title}
-    href={new URL('/yfblog/rss.xml', Astro.site)}
+    href="/rss.xml"
   />
 
   <Favicons />

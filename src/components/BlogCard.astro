@@ -29,8 +29,8 @@ const subpostCount = !isSubpost(entry.id) ? await getSubpostCount(entry.id) : 0
   class="hover:bg-muted/50 border p-4 transition-colors duration-300 ease-in-out"
 >
   <Link
-    href={`/yfblog/${entry.collection}/${entry.id}`}
-    class="flex flex-col gap-4 sm:flex-row"
+    href={`/blog/${entry.id}`}
+    class="group flex flex-col gap-4 sm:flex-row"
   >
     {
       (entry.data.imageWithoutText || entry.data.imageWithText) && (
