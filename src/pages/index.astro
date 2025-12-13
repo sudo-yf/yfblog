@@ -97,12 +97,12 @@ const latestPost = await getAllPosts().then((posts) => posts.at(0))
           <div
             class="absolute size-full bg-[url('/static/bento/blog-foreground-square.png')] bg-cover bg-center bg-no-repeat transition-opacity duration-200 sm:bg-[url('/static/bento/blog-foreground.png')] sm:opacity-0 sm:group-hover/blog:opacity-100"
           >
+            <p
+              class="text-foreground/80 bg-background absolute bottom-4 left-16 border p-2 text-xs text-pretty sm:top-[42.5%] sm:right-4 sm:bottom-[inherit] sm:left-[inherit] sm:-translate-y-1/2"
+            >
+              Read my latest<br /> blog post!
+            </p>
           </div>
-          <p
-            class="text-foreground/80 bg-background absolute bottom-4 left-16 border p-2 text-xs text-pretty sm:top-[42.5%] sm:right-4 sm:bottom-[inherit] sm:left-[inherit] sm:-translate-y-1/2"
-          >
-            Read my latest<br /> blog post!
-          </p>
           <div class="p-3 sm:size-full sm:p-6">
             {
               latestPost?.data.imageWithText?.src && (
