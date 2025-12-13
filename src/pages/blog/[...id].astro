@@ -1,6 +1,7 @@
 ---
 import Badge from '@/components/Badge.astro'
 import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import Comments from '@/components/Comments'
 import Link from '@/components/Link.astro'
 import PostHead from '@/components/PostHead.astro'
 import PostNavigation from '@/components/PostNavigation.astro'
@@ -9,6 +10,7 @@ import SubpostsSidebar from '@/components/SubpostsSidebar.astro'
 import TOCHeader from '@/components/TOCHeader.astro'
 import TOCSidebar from '@/components/TOCSidebar.astro'
 import { Button } from '@/components/ui/button'
+import { GISCUS_CONFIG } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
 import {
   getAdjacentPosts,
@@ -272,6 +274,21 @@ const tocSections = await getTOCSections(currentPostId)
       olderPost={navigation.older}
       parentPost={isCurrentSubpost ? navigation.parent : undefined}
     />
+
+    <!-- Comments Section -->
+    <section class="col-start-2 mt-12 border-t border-border pt-8">
+      <h2 class="mb-6 text-2xl font-medium">Comments</h2>
+      <Comments
+        client:idle
+        repo={GISCUS_CONFIG.repo}
+        repoId={GISCUS_CONFIG.repoId}
+        category={GISCUS_CONFIG.category}
+        categoryId={GISCUS_CONFIG.categoryId}
+        mapping={GISCUS_CONFIG.mapping}
+        reactionsEnabled={GISCUS_CONFIG.reactionsEnabled}
+        lang={GISCUS_CONFIG.lang}
+      />
+    </section>
   </section>
 
   <Button

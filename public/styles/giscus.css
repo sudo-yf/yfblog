@@ -1,0 +1,116 @@
+/*!
+ * Custom Minimalist Giscus Theme
+ * Removes all borders, backgrounds, and shadows for a clean look.
+ */
+main {
+  --color-prettylights-syntax-comment: #8b949e;
+  --color-prettylights-syntax-constant: #79c0ff;
+  --color-prettylights-syntax-entity: #d2a8ff;
+  --color-prettylights-syntax-storage-modifier-import: #c9d1d9;
+  --color-prettylights-syntax-entity-tag: #7ee787;
+  --color-prettylights-syntax-keyword: #ff7b72;
+  --color-prettylights-syntax-string: #a5d6ff;
+  --color-prettylights-syntax-variable: #ffa657;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #f0f6fc;
+  --color-prettylights-syntax-invalid-illegal-text: #f0f6fc;
+  --color-prettylights-syntax-invalid-illegal-bg: #8b949e;
+  --color-prettylights-syntax-carriage-return-text: #f0f6fc;
+  --color-prettylights-syntax-carriage-return-bg: #b61032;
+  --color-prettylights-syntax-string-regexp: #7ee787;
+  --color-prettylights-syntax-markup-list: #f2cc60;
+  --color-prettylights-syntax-markup-heading: #1f6feb;
+  --color-prettylights-syntax-markup-italic: #c9d1d9;
+  --color-prettylights-syntax-markup-bold: #c9d1d9;
+  --color-prettylights-syntax-markup-deleted-text: #ffdcd7;
+  --color-prettylights-syntax-markup-deleted-bg: #67060c;
+  --color-prettylights-syntax-markup-inserted-text: #aff5b4;
+  --color-prettylights-syntax-markup-inserted-bg: #033a16;
+  --color-prettylights-syntax-markup-changed-text: #ffdfb6;
+  --color-prettylights-syntax-markup-changed-bg: #5a1e02;
+  --color-prettylights-syntax-markup-ignored-text: #c9d1d9;
+  --color-prettylights-syntax-markup-ignored-bg: #1158c7;
+  --color-prettylights-syntax-meta-diff-range: #d2a8ff;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
+
+  /* Transparent Base */
+  --color-canvas-default: transparent;
+  --color-canvas-overlay: #1e1e1e; /* Minimal overlay if needed */
+  --color-canvas-inset: transparent;
+  --color-border-default: transparent;
+  --color-border-muted: transparent;
+  --color-neutral-muted: rgba(110,118,129,0.2);
+
+  /* Accents - matching blog gold/warm tones if possible */
+  --color-accent-fg: #e9d3b6;
+  --color-accent-emphasis: #e9d3b6;
+  --color-accent-muted: rgba(233, 211, 182, 0.4);
+  --color-accent-subtle: rgba(233, 211, 182, 0.15);
+
+  --color-success-fg: #3fb950;
+  --color-attention-fg: #d29922;
+  --color-danger-fg: #f85149;
+  
+  --color-primer-shadow-focus: 0 0 0 0 transparent;
+  --color-primer-shadow-inset: 0 0 0 0 transparent;
+
+  /* Button Styles - Minimal */
+  --color-btn-text: #c9d1d9;
+  --color-btn-bg: transparent;
+  --color-btn-border: transparent;
+  --color-btn-shadow: 0 0 transparent;
+  --color-btn-inset-shadow: 0 0 transparent;
+  --color-btn-hover-bg: rgba(255,255,255,0.05);
+  --color-btn-hover-border: transparent;
+  --color-btn-active-bg: rgba(255,255,255,0.1);
+  --color-btn-active-border: transparent;
+  
+  /* Primary Button (Comment) */
+  --color-btn-primary-text: #1a1a1a;
+  --color-btn-primary-bg: #e9d3b6;
+  --color-btn-primary-border: transparent;
+  --color-btn-primary-shadow: 0 0 transparent;
+  --color-btn-primary-inset-shadow: 0 0 transparent;
+  --color-btn-primary-hover-bg: #eddec8;
+  --color-btn-primary-hover-border: transparent;
+  --color-btn-primary-selected-bg: #e9d3b6;
+  --color-btn-primary-selected-shadow: 0 0 transparent;
+  --color-btn-primary-disabled-text: rgba(26,26,26,0.5);
+  --color-btn-primary-disabled-bg: rgba(233, 211, 182, 0.6);
+  --color-btn-primary-disabled-border: transparent;
+
+  /* Text Colors */
+  --color-fg-default: #e9d3b6;
+  --color-fg-muted: #8b949e;
+  --color-fg-subtle: #484f58;
+
+  --color-canvas-default-transparent: rgba(0,0,0,0);
+  --color-border-primary: transparent;
+  --color-border-secondary: transparent;
+  --color-border-tertiary: transparent;
+}
+
+/* Aggressive Overrides for true minimalist look */
+.gsc-comment-box {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.gsc-reply-box {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.gsc-input {
+  border: 1px solid rgba(233, 211, 182, 0.1) !important; /* Extremely subtle line or none */
+  background: transparent !important;
+}
+
+.gsc-control {
+  border: none !important;
+}
+
+.gsc-timeline {
+  border: none !important;
+}

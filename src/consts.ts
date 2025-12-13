@@ -54,3 +54,30 @@ export const ICON_MAP: IconMap = {
   Email: 'lucide:mail',
   RSS: 'lucide:rss',
 }
+
+// Giscus Comment System Configuration
+// Get these values from https://giscus.app after setting up GitHub Discussions
+export const GISCUS_CONFIG = {
+  // REQUIRED: Your GitHub repository in the format 'username/repo'
+  // Example: 'sudo-yf/sudo-yf.github.io'
+  repo: 'sudo-yf/sudo-yf.github.io' as `${string}/${string}`,
+
+  // REQUIRED: Repository ID - get from giscus.app
+  repoId: 'R_kgDOQnsBMg',
+
+  // REQUIRED: Discussion category name
+  // Default: 'Comments' (create this category in your GitHub Discussions)
+  category: 'General',
+
+  // REQUIRED: Category ID - get from giscus.app
+  categoryId: 'DIC_kwDOQnsBMs4CzvhT',
+
+  // Optional: How to map pages to discussions
+  mapping: 'pathname' as const,
+
+  // Optional: Enable reactions on the main post
+  reactionsEnabled: true,
+
+  // Optional: Language
+  lang: 'zh-CN',
+}
