@@ -95,6 +95,10 @@ const latestPost = await getAllPosts().then((posts) => posts.at(0))
           class="group/blog relative size-full bg-[url('/static/bento/blog-background-square.png')] bg-cover bg-center bg-no-repeat sm:bg-[url('/static/bento/blog-background.png')]"
         >
           <div
+            class="absolute size-full bg-[url('/static/bento/blog-middle-square.png')] bg-cover bg-center bg-no-repeat sm:bg-[url('/static/bento/blog-middle.png')]"
+          >
+          </div>
+          <div
             class="absolute size-full bg-[url('/static/bento/blog-foreground-square.png')] bg-cover bg-center bg-no-repeat transition-opacity duration-200 sm:bg-[url('/static/bento/blog-foreground.png')] sm:opacity-0 sm:group-hover/blog:opacity-100"
           >
             <p
