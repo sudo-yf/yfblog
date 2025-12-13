@@ -1,72 +1,199 @@
-![Showcase Card](/public/static/showcase-card.png)
+# Yifan's Blog
 
-<div align="center">
+个人博客网站，基于 [Astro](https://astro.build/) 和 [astro-erudite](https://github.com/jktrn/astro-erudite) 模板构建。
 
-## enscribe.dev
+## 📝 如何更新博客
 
-[![CodeFactor]](https://www.codefactor.io/repository/github/jktrn/enscribe.dev)
-![Stargazers]
-[![Code License]](LICENSE.md)
-[![Content License]](LICENSE.content.md)
+### 添加新文章
 
-[**enscribe.dev**](https://enscribe.dev) is my personal blog and portfolio, built with [**Astro**](https://astro.build/) and [**Tailwind**](https://tailwindcss.com/). Based on my personal blogging template, [**astro-erudite**](https://github.com/jktrn/astro-erudite).
+博客文章存储在 `blog/` 目录下，按分类组织：
 
-</div>
+```
+blog/
+├── Study/         # 学习相关
+├── Learning/      # 技能学习
+├── Recommendations/  # 推荐内容
+└── Life/          # 生活日记
+```
 
+**创建新文章**：
+
+1. 在对应分类文件夹下创建 `.md` 或 `.mdx` 文件
+2. 添加 frontmatter（文章元数据）：
+
+```markdown
+---
+title: '文章标题'
+description: '文章描述'
+date: 2025-12-14
+tags:
+  - tag1
+  - tag2
+authors:
+  - yifan
 ---
 
-### Licensing
+你的文章内容...
+```
 
-> [!IMPORTANT]
-> TL;DR: **This is a personal site. Do not clone the theming and claim it is yours!** The complete blogging structure with dozens of useful features is available at [**jktrn/astro-erudite**](https://github.com/jktrn/astro-erudite), which is MIT-licensed and free-to-use. If you wish to use any component within this site itself, contact me for permission.
+### Obsidian 支持
 
- - The original template is based on [**jktrn/astro-erudite**](https://github.com/jktrn/astro-erudite) and [**trevortylerlee/astro-micro**](https://github.com/trevortylerlee/astro-micro) projects that remain under their original MIT license for base components.
- - All custom code modifications in [**jktrn/enscribe.dev**](https://github.com/jktrn/enscribe.dev) are proprietary and require explicit permission for usage.
- - Website blog content (including text, images, and other materials) uses the [**CC BY-NC-ND 4.0**](https://creativecommons.org/licenses/by-nc-nd/4.0/) license, which allows sharing, requires attribution, and prohibits commercial use and derivative works.
+支持 Obsidian 图片插入语法 `![[image.png]]`。图片可以放在：
+- 文章同级目录
+- `assets/` 子文件夹
 
+### 创建子系列
 
-For full details, please refer to the [**LICENSE.md**](LICENSE.md) and [**LICENSE.content.md**](LICENSE.content.md) file in this repository or contact [**jason@enscribe.dev**](mailto:jason@enscribe.dev).
+在分类文件夹下创建子文件夹，并添加 `index.mdx` 作为系列首页：
 
-### Stack
+```
+blog/Study/
+├── index.mdx          # Study 分类首页
+├── series-name/       # 子系列
+│   ├── index.mdx      # 系列首页
+│   ├── part-1.md
+│   └── part-2.md
+└── standalone.md      # 独立文章
+```
 
-This is a list of the various technologies used to build this website:
+## 🎵 如何更新音乐
 
-| Category   | Technology Name                                                                                |
-| ---------- | ---------------------------------------------------------------------------------------------- |
-| Framework  | [**Astro**](https://astro.build/)                                                              |
-| Styling    | [**Tailwind**](https://tailwindcss.com)                                                        |
-| Components | [**shadcn/ui**](https://ui.shadcn.com/)                                                        |
-| Content    | [**MDX**](https://mdxjs.com/)                                                                  |
-| Codeblocks | [**Expressive Code**](https://expressive-code.com/), [Shiki](https://github.com/shikijs/shiki) |
-| Graphics   | [**Figma**](https://www.figma.com/)                                                            |
-| Deployment | [**Vercel**](https://vercel.com)                                                               |
+编辑 `src/components/bento/MusicCard.tsx`:
 
-> [!NOTE]
-> This site was previously built using [**Next.js**](https://nextjs.org) via the [**timlrx/tailwind-nextjs-starter-blog**](https://github.com/timlrx/tailwind-nextjs-starter-blog). If you wish to reference the codebase or utilize its components at that point (previously licensed via [**Apache 2.0**](https://github.com/jktrn/enscribe.dev/blob/ddda783b21d5d49783f4d98e9b06676af8f95031/LICENSE)), utilize the [**v2.3.0**](https://github.com/jktrn/enscribe.dev/releases/tag/v2.3.0) release or browse the tree at [**`ddda783`**](https://github.com/jktrn/enscribe.dev/tree/ddda783b21d5d49783f4d98e9b06676af8f95031).
+```typescript
+const song = "歌曲名"
+const artist = "艺术家"
+const album = "专辑名"
+const url = "https://music.apple.com/..." // Apple Music 链接
+```
 
-### Star History
+更新专辑封面：替换 `public/static/bento/music-cover.jpg`
 
-<a href="https://star-history.com/#jktrn/enscribe.dev&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=jktrn/enscribe.dev&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=jktrn/enscribe.dev&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=jktrn/enscribe.dev&type=Date" />
- </picture>
-</a>
+## 💼 如何更新 Work/项目
 
+### 添加新项目
 
+在 `src/content/projects/` 创建 `.mdx` 文件：
+
+```markdown
+---
+title: '项目标题'
+description: '项目描述'
+date: 2025-12-14
+url: 'https://project-url.com'
 ---
 
-<div align="center">
+项目详细介绍...
+```
 
-Made with ♥ by [enscribe](https://enscribe.dev)!
+### 编辑 Work 页面
 
-</div>
+主页面位于 `src/pages/work.astro`，可以自定义布局和内容。
 
-[cc-by-nc-nd]: http://creativecommons.org/licenses/by-nc-nd/4.0/
-[cc-by-nc-nd-shield]: https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg
+## 🎨 自定义个人信息
 
-[CodeFactor]: https://img.shields.io/codefactor/grade/github/jktrn/enscribe.dev?color=2f2a24&logo=codefactor&logoColor=fff&style=for-the-badge
-[Stargazers]: https://img.shields.io/github/stars/jktrn/enscribe.dev?color=463f37&logo=github&logoColor=fff&style=for-the-badge
-[Code License]: https://img.shields.io/badge/code%20license-proprietary-5d5449?style=for-the-badge&logo=github&logoColor=fff
-[Content License]: https://img.shields.io/badge/content%20license-CC%20BY--NC--ND%204.0-756a5b?style=for-the-badge&logo=creativecommons&logoColor=fff
+### 社交链接
+
+编辑 `src/consts.ts` 中的 `SOCIAL_LINKS`:
+
+```typescript
+export const SOCIAL_LINKS: SocialLink[] = [
+  {
+    label: 'GitHub',
+    href: 'https://github.com/your-username',
+  },
+  {
+    label: 'Email',
+    href: 'mailto:your@email.com',
+  },
+  // ...
+]
+```
+
+### 导航菜单
+
+同样在 `src/consts.ts` 中的 `NAV_LINKS`:
+
+```typescript
+export const NAV_LINKS: NavLink[] = [
+  { label: 'Home', href: withBase('/') },
+  { label: 'Blog', href: withBase('/blog') },
+  // 添加更多...
+]
+```
+
+### 主页个人介绍
+
+编辑 `src/pages/index.astro`，找到 About 卡片的文本部分并修改个人介绍。
+
+### Discord 状态
+
+编辑 `src/components/bento/DiscordPresence.tsx` 中的配置。
+
+### GitHub 日历
+
+在 `src/pages/index.astro` 中找到：
+
+```tsx
+<GithubCalendar username="sudo-yf" client:load />
+```
+
+替换为你的 GitHub 用户名。
+
+## 🚀 部署
+
+### GitHub Pages 配置
+
+**重要**：仓库必须命名为 `username.github.io` 才能部署到根域名。
+
+1. 推送代码到 GitHub
+2. GitHub Actions 会自动构建和部署
+3. 网站将部署到 `https://username.github.io/`
+
+### 本地开发
+
+```bash
+# 安装依赖
+npm install
+
+# 开发服务器
+npm run dev
+
+# 构建
+npm run build
+
+# 预览构建结果
+npm run preview
+```
+
+## 📂 项目结构
+
+```
+yfblog/
+├── blog/                  # 博客内容（Markdown）
+├── public/
+│   └── static/
+│       └── bento/        # 主页卡片资源
+├── src/
+│   ├── components/       # UI 组件
+│   │   └── bento/       # 主页 Bento 卡片
+│   ├── content/         # 其他内容
+│   │   ├── authors/     # 作者信息
+│   │   └── projects/    # 项目/工作
+│   ├── layouts/         # 页面布局
+│   ├── pages/           # 路由页面
+│   └── consts.ts        # 全局配置
+└── astro.config.ts      # Astro 配置
+```
+
+## 📄 许可证
+
+代码基于 [astro-erudite](https://github.com/jktrn/astro-erudite) 模板（MIT License）。
+
+## 🛠 技术栈
+
+- **框架**: Astro
+- **样式**: Tailwind CSS
+- **组件**: shadcn/ui
+- **内容**: MDX + Markdown
+- **部署**: GitHub Pages
