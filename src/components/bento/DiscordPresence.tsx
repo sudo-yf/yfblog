@@ -1,9 +1,14 @@
+'use client'
+
 import { useMemo, useState, useEffect, useCallback, memo } from 'react'
 import { FaDiscord } from 'react-icons/fa'
 import { useLanyard } from 'react-use-lanyard'
 import { Skeleton } from '@/components/ui/skeleton'
 import { cn, getElapsedTime } from '@/lib/utils'
 import AvatarComponent from '@/components/ui/avatar'
+import { getBaseUrl } from '@/lib/path-utils'
+
+const BASE_URL = getBaseUrl()
 
 const DISCORD_USER_ID = '747519888347627550'
 
@@ -122,13 +127,13 @@ const AvatarSection = memo<{
   <div className="flex justify-between gap-x-1">
     <div className="relative">
       <AvatarComponent
-        src="/static/bento/avatar.jpg"
+        src={`${BASE_URL}static/bento/avatar.jpg`}
         alt="Avatar"
         fallback="e"
         className="-mt-12 aspect-square grayscale sepia-50 size-16 rounded-full sm:-mt-[4.5rem] sm:size-24"
       />
       <div
-        className="absolute inset-0 -mt-12 aspect-square size-16 rounded-full bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-200 group-hover/discord:opacity-100 sm:-mt-[4.5rem] sm:size-24 sm:bg-[url('/static/bento/avatar-foreground.png')]"
+        className={`absolute inset-0 -mt-12 aspect-square size-16 rounded-full bg-[url('${BASE_URL}static/bento/avatar-foreground.png')] bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-200 group-hover/discord:opacity-100 sm:-mt-[4.5rem] sm:size-24`}
         aria-hidden="true"
       />
       {statusIndicator}
@@ -157,7 +162,7 @@ const DiscordLayout = memo<{
       to add me!
     </p>
     <div className="grid size-full grid-rows-4">
-      <div className="bg-border/25 bg-[url('/static/bento/discord-banner.png')] bg-cover bg-center bg-no-repeat" />
+      <div className={`bg-border/25 bg-[url('${BASE_URL}static/bento/discord-banner.png')] bg-cover bg-center bg-no-repeat`} />
       <div className="bg-muted row-span-3 flex flex-col gap-3 p-3">
         <AvatarSection statusIndicator={statusIndicator} />
         <UserInfo />
@@ -174,7 +179,7 @@ const ActivityDisplay = memo<{
 }>(({ activity, elapsedTime }) => {
   const activityImageUrl = useMemo(() => {
     if (!activity?.assets?.large_image || !activity.application_id) {
-      return '/static/bento/bento-discord-futon.svg'
+      return `${BASE_URL}static/bento/bento-discord-futon.svg`
     }
     return `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.png`
   }, [activity?.assets?.large_image, activity?.application_id])

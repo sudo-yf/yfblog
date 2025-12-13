@@ -1,4 +1,5 @@
 import type { IconMap, SocialLink, Site } from '@/types'
+import { withBase } from '@/lib/path-utils'
 
 export const SITE: Site = {
   title: "Yifan's Blog",
@@ -13,19 +14,19 @@ export const SITE: Site = {
 
 export const NAV_LINKS: SocialLink[] = [
   {
-    href: '/',
+    href: withBase('/'),
     label: 'Home',
   },
   {
-    href: '/blog',
+    href: withBase('/blog'),
     label: 'Blog',
   },
   {
-    href: '/work',
+    href: withBase('/work'),
     label: 'Work',
   },
   {
-    href: '/about',
+    href: withBase('/about'),
     label: 'About',
   },
 ]
@@ -40,7 +41,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
     label: 'Email',
   },
   {
-    href: '/rss.xml',
+    href: withBase('/rss.xml'),
     label: 'RSS',
   },
 ]
