@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "笔记-大学物理.mdx",
+                "file": "笔记-公式速查.mdx",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "笔记-大学物理"
+              "title": "笔记-公式速查"
             }
           }
         ],
@@ -200,9 +200,10 @@
   },
   "active": "31c939c662c49d7e",
   "lastOpenFiles": [
+    "笔记-大学物理.mdx",
+    "笔记-公式速查.mdx",
     "笔记-电工学.mdx",
     "笔记-工程力学.mdx",
-    "笔记-大学物理.mdx",
     "12.16 3.mdx",
     "12.16 2.mdx",
     "12.16.mdx",
@@ -224,7 +225,6 @@
     "Study/test-image.svg",
     "Study/assets/Pasted image 20251213200906.png",
     "Life/test-long-content.md",
-    "Life/index.mdx",
     "Life/2025-12-14.md",
     "Life/2025-12-13.md",
     "Learning/test-long-content.md",

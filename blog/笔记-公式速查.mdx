@@ -1,0 +1,263 @@
+---
+title: 期末｜公式
+description: 吴同学友情提供
+date: 2025-12-17
+tags:
+  - study
+authors:
+  - yifan
+---
+
+# 第一部分：物理学 (电磁学、近代物理)
+
+### 静电场
+
+**库仑定律**
+$$ \color{purple}{\vec{F}} = \color{magenta}{\frac{1}{4\pi\varepsilon_0}} \frac{\color{blue}{q_1 q_2}}{\color{orange}{r^2}} \color{green}{\vec{e}_r} $$
+
+**场强定义**
+$$ \color{purple}{\vec{E}} = \frac{\color{purple}{\vec{F}}}{\color{blue}{q}} = \color{magenta}{\int} \frac{\color{blue}{dq}}{\color{magenta}{4\pi\varepsilon_0} \color{orange}{r^2}} \color{green}{\vec{e}_r} $$
+
+**无限长带电直线**
+$$ \color{purple}{E} = \frac{\color{blue}{\lambda}}{\color{magenta}{2\pi\varepsilon_0} \color{orange}{r}} $$
+
+**圆环轴线电场**
+$$ \color{purple}{E} = \color{magenta}{\frac{1}{4\pi\varepsilon_0}} \frac{\color{blue}{Q}\color{orange}{x}}{(\color{orange}{x^2+R^2})^{\color{magenta}{3/2}}} $$
+
+**圆盘轴线电场**
+$$ \color{purple}{E} = \frac{\color{blue}{\sigma}}{\color{magenta}{2\varepsilon_0}} \left( \color{magenta}{1} \color{red}{-} \frac{\color{orange}{x}}{\sqrt{\color{orange}{x^2+R^2}}} \right) $$
+
+**高斯定理**
+$$ \color{purple}{\Phi_e} = \color{magenta}{\oiint_S} \color{purple}{\vec{E}} \cdot \color{orange}{d\vec{S}} = \frac{\color{blue}{\sum q_{\text{in}}}}{\color{magenta}{\varepsilon_0}} $$
+
+**特殊几何体电场**
+*   **球体** ($\color{orange}{r}<\color{orange}{R}$): $\color{purple}{E} = \frac{\color{blue}{q}\color{orange}{r}}{\color{magenta}{4\pi\varepsilon_0} \color{orange}{R^3}}$
+*   **球体** ($\color{orange}{r}>\color{orange}{R}$): $\color{purple}{E} = \frac{\color{blue}{q}}{\color{magenta}{4\pi\varepsilon_0} \color{orange}{r^2}}$
+*   **无限大平面**: $\color{purple}{E} = \frac{\color{blue}{\sigma}}{\color{magenta}{2\varepsilon_0}}$
+
+**电势**
+$$ \color{purple}{U} = \color{magenta}{\int} \color{purple}{\vec{E}} \cdot \color{orange}{d\vec{l}} $$
+$$ \color{purple}{W} = \color{blue}{q} \color{purple}{\Delta U} $$
+
+**特殊几何体电势**
+*   **圆环轴线**: $\color{purple}{U} = \frac{\color{blue}{Q}}{\color{magenta}{4\pi\varepsilon_0} \sqrt{\color{orange}{x^2+R^2}}}$
+*   **圆盘轴线**: $\color{purple}{U} = \frac{\color{blue}{\sigma}}{\color{magenta}{2\varepsilon_0}} (\sqrt{\color{orange}{R^2+x^2}} \color{red}{-} \color{orange}{x})$
+
+### 电介质与能量
+
+**电极化**
+$$ \color{green}{\vec{P}} = \color{magenta}{\lim_{\Delta V \to 0}} \frac{\sum \color{blue}{\vec{p_i}}}{\color{orange}{\Delta V}} $$
+$$ \color{purple}{\vec{D}} = \color{magenta}{\varepsilon_0} \color{purple}{\vec{E}} + \color{green}{\vec{P}} = \color{magenta}{\varepsilon} \color{purple}{\vec{E}} $$
+
+**介质中高斯定理**
+$$ \color{magenta}{\oiint_S} \color{purple}{\vec{D}} \cdot \color{orange}{d\vec{S}} = \color{blue}{\sum q_0} $$
+
+**电容**
+$$ \color{purple}{C} = \frac{\color{blue}{q}}{\color{purple}{U}} $$
+*   **平板电容**: $\color{purple}{C} = \frac{\color{magenta}{\varepsilon} \color{orange}{S}}{\color{orange}{d}}$
+*   **串联**: $\frac{\color{magenta}{1}}{\color{purple}{C}} = \color{magenta}{\sum} \frac{\color{magenta}{1}}{\color{purple}{C_i}}$
+*   **并联**: $\color{purple}{C} = \color{magenta}{\sum} \color{purple}{C_i}$
+
+**电场能量**
+$$ \color{purple}{W} = \color{magenta}{\frac{1}{2}} \color{purple}{C} \color{purple}{U^2} = \color{magenta}{\frac{1}{2}} \frac{\color{blue}{Q^2}}{\color{purple}{C}} = \color{magenta}{\frac{1}{2}} \color{blue}{Q} \color{purple}{U} $$
+$$ \color{purple}{w_e} = \color{magenta}{\frac{1}{2}} \color{magenta}{\varepsilon} \color{purple}{E^2} = \color{magenta}{\frac{1}{2}} \color{purple}{\vec{D}} \cdot \color{purple}{\vec{E}} $$
+
+### 稳恒磁场
+
+**毕奥-萨伐尔定律**
+$$ \color{purple}{d\vec{B}} = \frac{\color{magenta}{\mu_0} \color{blue}{I}}{\color{magenta}{4\pi}} \frac{\color{orange}{d\vec{l}} \times \color{green}{\vec{r}}}{\color{orange}{r^3}} $$
+
+**无限长直导线**
+$$ \color{purple}{B} = \frac{\color{magenta}{\mu_0} \color{blue}{I}}{\color{magenta}{2\pi} \color{orange}{a}} $$
+
+**圆环中心轴线**
+$$ \color{purple}{B} = \frac{\color{magenta}{\mu_0} \color{blue}{I} \color{orange}{R^2}}{\color{magenta}{2}(\color{orange}{R^2+x^2})^{\color{magenta}{3/2}}} $$
+
+**安培环路定理**
+$$ \color{magenta}{\oint_L} \color{purple}{\vec{B}} \cdot \color{orange}{d\vec{l}} = \color{magenta}{\mu_0} \color{blue}{\sum I_{\text{in}}} $$
+
+### 磁场力与电磁感应
+
+**洛伦兹力**
+$$ \color{purple}{\vec{F}} = \color{blue}{q} \color{green}{\vec{v}} \times \color{purple}{\vec{B}} $$
+$$ \color{orange}{R} = \frac{\color{blue}{m} \color{green}{v}}{\color{blue}{q} \color{purple}{B}}, \quad \color{green}{T} = \frac{\color{magenta}{2\pi} \color{blue}{m}}{\color{blue}{q} \color{purple}{B}} $$
+
+**霍尔效应**
+$$ \color{purple}{U_H} = \frac{\color{magenta}{1}}{\color{green}{n}\color{blue}{q}} \frac{\color{blue}{I}\color{purple}{B}}{\color{orange}{d}} $$
+
+**安培力**
+$$ \color{purple}{\vec{F}} = \color{magenta}{\int} \color{blue}{I} \color{orange}{d\vec{l}} \times \color{purple}{\vec{B}} $$
+
+**法拉第电磁感应定律**
+$$ \color{purple}{\mathcal{E}} = \color{red}{-} \frac{\color{magenta}{d}\color{orange}{\Phi}}{\color{magenta}{dt}} $$
+$$ \color{purple}{\mathcal{E}} = \color{magenta}{\int} (\color{green}{\vec{v}} \times \color{purple}{\vec{B}}) \cdot \color{orange}{d\vec{l}} $$
+
+**自感与互感**
+$$ \color{purple}{\mathcal{E}_L} = \color{red}{-} \color{orange}{L} \frac{\color{magenta}{d}\color{blue}{I}}{\color{magenta}{dt}} $$
+$$ \color{purple}{\mathcal{E}_{21}} = \color{red}{-} \color{orange}{M} \frac{\color{magenta}{d}\color{blue}{I_1}}{\color{magenta}{dt}} $$
+
+**磁场能量**
+$$ \color{purple}{W_m} = \color{magenta}{\frac{1}{2}} \color{orange}{L} \color{blue}{I^2} $$
+$$ \color{purple}{w_m} = \color{magenta}{\frac{1}{2}} \frac{\color{purple}{B^2}}{\color{magenta}{\mu}} = \color{magenta}{\frac{1}{2}} \color{purple}{\vec{B}} \cdot \color{purple}{\vec{H}} $$
+
+### 麦克斯韦方程组
+
+**位移电流**
+$$ \color{blue}{I_d} = \frac{\color{magenta}{d}\color{purple}{\Phi_D}}{\color{magenta}{dt}}, \quad \color{blue}{\vec{j_d}} = \frac{\color{magenta}{\partial} \color{purple}{\vec{D}}}{\color{magenta}{\partial t}} $$
+
+**全电流定律**
+$$ \color{magenta}{\oint_L} \color{purple}{\vec{H}} \cdot \color{orange}{d\vec{l}} = \color{blue}{I} + \frac{\color{magenta}{d}\color{purple}{\Phi_D}}{\color{magenta}{dt}} $$
+
+**积分形式**
+1.  $\color{magenta}{\oint_L} \color{purple}{\vec{E}} \cdot \color{orange}{d\vec{l}} = \color{red}{-} \color{magenta}{\iint_S} \frac{\color{magenta}{\partial} \color{purple}{\vec{B}}}{\color{magenta}{\partial t}} \cdot \color{orange}{d\vec{S}}$
+2.  $\color{magenta}{\oint_L} \color{purple}{\vec{H}} \cdot \color{orange}{d\vec{l}} = \color{blue}{\sum I} + \color{magenta}{\iint_S} \frac{\color{magenta}{\partial} \color{purple}{\vec{D}}}{\color{magenta}{\partial t}} \cdot \color{orange}{d\vec{S}}$
+3.  $\color{magenta}{\oiint_S} \color{purple}{\vec{D}} \cdot \color{orange}{d\vec{S}} = \color{blue}{\sum q}$
+4.  $\color{magenta}{\oiint_S} \color{purple}{\vec{B}} \cdot \color{orange}{d\vec{S}} = \color{magenta}{0}$
+
+**电磁波**
+$$ \color{green}{v} = \frac{\color{magenta}{1}}{\sqrt{\color{magenta}{\varepsilon \mu}}} $$
+$$ \color{purple}{\vec{S}} = \color{purple}{\vec{E}} \times \color{purple}{\vec{H}} $$
+
+### 相对论与量子物理
+
+**洛伦兹变换**
+$$ \color{orange}{x'} = \frac{\color{orange}{x} \color{red}{-} \color{green}{v}\color{orange}{t}}{\sqrt{\color{magenta}{1} \color{red}{-} \color{green}{\beta^2}}}, \quad \color{orange}{t'} = \frac{\color{orange}{t} \color{red}{-} \color{green}{v}\color{orange}{x}/\color{magenta}{c^2}}{\sqrt{\color{magenta}{1} \color{red}{-} \color{green}{\beta^2}}} $$
+
+**相对论效应**
+$$ \color{orange}{\Delta t} = \color{magenta}{\gamma} \color{orange}{\Delta t_0} $$
+$$ \color{orange}{L'} = \frac{\color{orange}{L_0}}{\color{magenta}{\gamma}} $$
+$$ \color{blue}{m} = \color{magenta}{\gamma} \color{blue}{m_0} $$
+$$ \color{purple}{E} = \color{blue}{m}\color{magenta}{c^2} = \sqrt{(\color{blue}{m_0} \color{magenta}{c^2})^2 + (\color{green}{p}\color{magenta}{c})^2} $$
+
+**光电效应**
+$$ \color{magenta}{h} \color{green}{\nu} = \color{magenta}{\frac{1}{2}} \color{blue}{m} \color{green}{v_m^2} + \color{red}{W} $$
+
+**康普顿散射**
+$$ \color{orange}{\Delta \lambda} = \frac{\color{magenta}{h}}{\color{blue}{m_0} \color{magenta}{c}} (\color{magenta}{1} \color{red}{-} \cos\color{green}{\varphi}) $$
+
+**玻尔模型**
+$$ \color{green}{L} = \color{blue}{n} \color{magenta}{\hbar} $$
+$$ \color{purple}{E_n} = \color{red}{-}\frac{\color{magenta}{13.6}}{\color{blue}{n^2}} \color{magenta}{\text{eV}} $$
+
+**德布罗意波**
+$$ \color{green}{\lambda} = \frac{\color{magenta}{h}}{\color{green}{p}} $$
+
+**不确定度关系**
+$$ \color{orange}{\Delta x} \color{green}{\Delta p} \ge \frac{\color{magenta}{\hbar}}{\color{magenta}{2}} $$
+
+**一维无限深势阱**
+$$ \color{purple}{E_n} = \frac{\color{blue}{n^2} \color{magenta}{h^2}}{\color{magenta}{8} \color{blue}{m} \color{orange}{a^2}} $$
+$$ \color{purple}{\psi_n}(\color{orange}{x}) = \sqrt{\frac{\color{magenta}{2}}{\color{orange}{a}}} \sin\left(\frac{\color{blue}{n}\color{magenta}{\pi} \color{orange}{x}}{\color{orange}{a}}\right) $$
+
+---
+
+# 第二部分：材料力学
+
+### 基础变形
+
+**胡克定律**
+$$ \color{purple}{\sigma} = \color{magenta}{E} \color{orange}{\epsilon}, \quad \color{purple}{\Delta L} = \frac{\color{blue}{F}\color{orange}{L}}{\color{magenta}{E}\color{orange}{A}} $$
+
+**热变形**
+$$ \color{purple}{\Delta L} = \color{magenta}{\alpha} \color{blue}{\Delta T} \color{orange}{L} $$
+
+**剪切与扭转**
+$$ \color{purple}{\tau} = \color{magenta}{G} \color{orange}{\gamma} $$
+$$ \color{purple}{\varphi} = \frac{\color{blue}{T} \color{orange}{l}}{\color{magenta}{G} \color{orange}{I_p}} $$
+$$ \color{purple}{\tau_{\rho}} = \frac{\color{blue}{T} \color{orange}{\rho}}{\color{orange}{I_p}}, \quad \color{purple}{\tau_{\max}} = \frac{\color{blue}{T}}{\color{orange}{W_p}} $$
+
+**极惯性矩**
+$$ \color{orange}{I_p} = \frac{\color{magenta}{\pi} \color{orange}{D^4}}{\color{magenta}{32}} (\color{magenta}{1} \color{red}{-} \color{orange}{\alpha^4}) $$
+
+### 应力状态
+
+**薄壁容器**
+$$ \color{purple}{\sigma_m} = \frac{\color{blue}{P}\color{orange}{D}}{\color{magenta}{4}\color{orange}{\delta}}, \quad \color{purple}{\sigma_t} = \frac{\color{blue}{P}\color{orange}{D}}{\color{magenta}{2}\color{orange}{\delta}} $$
+
+**平面应力状态 (斜截面)**
+$$ \color{purple}{\sigma_\alpha} = \frac{\color{blue}{\sigma_x}+\color{blue}{\sigma_y}}{\color{magenta}{2}} + \frac{\color{blue}{\sigma_x}\color{red}{-}\color{blue}{\sigma_y}}{\color{magenta}{2}} \cos \color{green}{2\alpha} \color{red}{-} \color{blue}{\tau_{xy}} \sin \color{green}{2\alpha} $$
+$$ \color{purple}{\tau_\alpha} = \frac{\color{blue}{\sigma_x}\color{red}{-}\color{blue}{\sigma_y}}{\color{magenta}{2}} \sin \color{green}{2\alpha} + \color{blue}{\tau_{xy}} \cos \color{green}{2\alpha} $$
+
+**主应力**
+$$ \color{purple}{\sigma_{1,2}} = \frac{\color{blue}{\sigma_x}+\color{blue}{\sigma_y}}{\color{magenta}{2}} \pm \sqrt{\left(\frac{\color{blue}{\sigma_x}\color{red}{-}\color{blue}{\sigma_y}}{\color{magenta}{2}}\right)^2 + \color{blue}{\tau_{xy}^2}} $$
+$$ \color{purple}{\tau_{\max}} = \frac{\color{purple}{\sigma_1} \color{red}{-} \color{purple}{\sigma_2}}{\color{magenta}{2}} $$
+
+**广义胡克定律**
+$$ \color{orange}{\epsilon_1} = \frac{\color{magenta}{1}}{\color{magenta}{E}} [\color{purple}{\sigma_1} \color{red}{-} \color{magenta}{\mu}(\color{purple}{\sigma_2} + \color{purple}{\sigma_3})] $$
+
+### 强度与弯曲
+
+**弯曲正应力**
+$$ \color{purple}{\sigma} = \frac{\color{blue}{M} \color{orange}{y}}{\color{orange}{I_z}}, \quad \color{purple}{\sigma_{\max}} = \frac{\color{blue}{M_{\max}}}{\color{orange}{W_z}} $$
+
+**弯曲切应力**
+$$ \color{purple}{\tau} = \frac{\color{blue}{F_s} \color{orange}{S_z^*}}{\color{orange}{b I_z}} $$
+
+**挠曲线微分方程**
+$$ \color{magenta}{E} \color{orange}{I_z} \color{purple}{w''(x)} = \color{red}{-} \color{blue}{M(x)} $$
+
+**压杆稳定 (欧拉公式)**
+$$ \color{purple}{F_{cr}} = \frac{\color{magenta}{\pi^2} \color{magenta}{E} \color{orange}{I}}{(\color{orange}{\mu l})^2} $$
+
+**动荷系数**
+$$ \color{purple}{K_d} = \color{magenta}{1} + \sqrt{\color{magenta}{1} + \frac{\color{magenta}{2}\color{orange}{h}}{\color{orange}{\Delta_{st}}}} $$
+
+---
+
+# 第三部分：电路与电子技术
+
+### 电路基本定律
+
+**元件特性**
+$$ \color{purple}{i_C} = \color{orange}{C} \frac{\color{magenta}{d}\color{blue}{u}}{\color{magenta}{dt}}, \quad \color{purple}{u_L} = \color{orange}{L} \frac{\color{magenta}{d}\color{blue}{i}}{\color{magenta}{dt}} $$
+
+**电源等效**
+$$ \color{purple}{E} = \color{blue}{I_s} \color{orange}{R_0} $$
+
+**节点电压法**
+$$ \color{purple}{U_{\text{node}}} = \frac{\sum \color{blue}{I_s} + \sum \color{purple}{E}/\color{orange}{R}}{\sum \color{magenta}{1}/\color{orange}{R}} $$
+
+### 暂态与交流
+
+**三要素法**
+$$ \color{purple}{f(t)} = \color{purple}{f(\infty)} + [\color{purple}{f(0_+)} \color{red}{-} \color{purple}{f(\infty)}] e^{\color{red}{-}\color{orange}{t}/\color{magenta}{\tau}} $$
+$$ \color{magenta}{\tau_{RC}} = \color{orange}{R}\color{orange}{C}, \quad \color{magenta}{\tau_{RL}} = \frac{\color{orange}{L}}{\color{orange}{R}} $$
+
+**交流阻抗**
+$$ \color{orange}{X_C} = \frac{\color{magenta}{1}}{\color{green}{\omega} \color{orange}{C}}, \quad \color{orange}{X_L} = \color{green}{\omega} \color{orange}{L} $$
+$$ \color{purple}{Z} = \color{orange}{R} + \color{magenta}{j}(\color{orange}{X_L} \color{red}{-} \color{orange}{X_C}) $$
+
+**功率**
+$$ \color{purple}{P} = \color{blue}{U}\color{blue}{I} \cos\color{green}{\varphi} $$
+$$ \color{purple}{Q} = \color{blue}{U}\color{blue}{I} \sin\color{green}{\varphi} $$
+$$ \color{purple}{S} = \sqrt{\color{purple}{P^2}+\color{purple}{Q^2}} $$
+
+**串联谐振**
+$$ \color{green}{f_0} = \frac{\color{magenta}{1}}{\color{magenta}{2\pi}\sqrt{\color{orange}{LC}}} $$
+$$ \color{purple}{Q} = \frac{\color{magenta}{1}}{\color{green}{\omega_0} \color{orange}{R} \color{orange}{C}} = \frac{\color{green}{\omega_0} \color{orange}{L}}{\color{orange}{R}} $$
+
+### 模拟电子
+
+**三极管 (放大区)**
+$$ \color{blue}{I_C} = \color{green}{\beta} \color{blue}{I_B} $$
+$$ \color{orange}{r_{be}} \approx \color{magenta}{200} + (\color{magenta}{1}+\color{green}{\beta}) \frac{\color{magenta}{26}}{\color{blue}{I_E}(\text{mA})} $$
+
+**共射放大倍数**
+$$ \color{purple}{A_u} \approx \color{red}{-}\frac{\color{green}{\beta} \color{orange}{R_L'}}{\color{orange}{r_{be}}} $$
+
+**运算放大器**
+*   **反向比例**: $\color{purple}{u_o} = \color{red}{-}\frac{\color{orange}{R_f}}{\color{orange}{R_1}} \color{blue}{u_i}$
+*   **同向比例**: $\color{purple}{u_o} = (\color{magenta}{1} + \frac{\color{orange}{R_f}}{\color{orange}{R_1}}) \color{blue}{u_i}$
+
+### 数字电子
+
+**摩根定律**
+$$ \overline{\color{blue}{A}\color{blue}{B}} = \bar{\color{blue}{A}} + \bar{\color{blue}{B}} $$
+$$ \overline{\color{blue}{A}+\color{blue}{B}} = \bar{\color{blue}{A}}\bar{\color{blue}{B}} $$
+
+**触发器特征方程**
+*   **RS**: $\color{purple}{Q_{n+1}} = \color{blue}{S} + \bar{\color{blue}{R}}\color{purple}{Q_n}$ ($\color{blue}{RS}=\color{magenta}{0}$)
+*   **JK**: $\color{purple}{Q_{n+1}} = \color{blue}{J}\bar{\color{purple}{Q}_n} + \bar{\color{blue}{K}}\color{purple}{Q_n}$
+*   **D**: $\color{purple}{Q_{n+1}} = \color{blue}{D}$
+*   **T**: $\color{purple}{Q_{n+1}} = \color{blue}{T} \bar{\color{purple}{Q}_n} + \bar{\color{blue}{T}} \color{purple}{Q_n}$
+* 
