@@ -1,0 +1,182 @@
+---
+title: 期末｜电子电路
+description: 吴同学友情提供
+date: 2025-12-16
+tags:
+  - study
+authors:
+  - yifan
+---
+
+## Page 1: 电路基础
+
+**元件**:
+*   电容 $C$: $i = C \frac{du}{dt}$
+*   电感 $L$: $u = L \frac{di}{dt}$
+*   电压源、电流源
+
+**基本定律**:
+*   KCL: $\sum I_{\text{入}} = \sum I_{\text{出}}$
+*   KVL: $\sum U_{\text{升}} = \sum U_{\text{降}}$ (环路电压代数和为0)
+
+**电源等效**:
+电压源串电阻 $\Leftrightarrow$ 电流源并电阻
+$U = E - I R_0$
+$I = I_s - \frac{U}{R_0}$
+转换关系: $E = I_s R_0$
+
+注意：列方程求解(KVL)时避开恒流源回路。
+
+---
+
+## Page 2: 电路分析方法
+
+**回路电流法 (Mesh Analysis)**:
+适用于网孔少、支路多的电路。
+自阻 $\times$ 环流 + 互阻 $\times$ 邻流 = 环路电源代数和
+例: $(R_1+R_3)I_I - R_3 I_{II} = E_1$
+
+**节点电压法 (Nodal Analysis)**:
+适用于节点少、支路多的电路。
+$$ U = \frac{\sum I_s + \sum E/R}{\sum 1/R} $$
+(两节点公式)
+
+**叠加定理 (Superposition)**:
+线性电路中，任一支路的电流/电压 = 各独立电源单独作用时产生响应的代数和。
+*   电压源不作用 $\to$ 短路
+*   电流源不作用 $\to$ 开路
+
+---
+
+## Page 3: 戴维宁与暂态电路
+
+**戴维宁定理 (Thevenin)**:
+有源二端网络 $\Leftrightarrow$ 电压源 $E$ (开路电压 $U_{oc}$) 串联 等效电阻 $R_0$。
+$R_0$ 求法: 除去电源后(源置零)的等效电阻。
+
+**诺顿定理 (Norton)**:
+等效为电流源 $I_s$ (短路电流 $I_{sc}$) 并联 $R_0$。
+
+**一阶电路暂态 (RL, RC)**:
+三要素法: $f(t) = f(\infty) + [f(0_+) - f(\infty)] e^{-t/\tau}$
+时间常数 $\tau$:
+*   RC电路: $\tau = RC$
+*   RL电路: $\tau = L/R$
+换路定则: $u_C, i_L$ 不能突变。
+
+**正弦稳态电路 (AC)**:
+相量表示: $\dot{A} = A e^{j\psi} = A \angle \psi = A(\cos\psi + j\sin\psi)$
+电容: $X_C = \frac{1}{\omega C}$, $\dot{U} = \dot{I} (-j X_C)$, 电压滞后电流 90度。
+电感: $X_L = \omega L$, $\dot{U} = \dot{I} (j X_L)$, 电压超前电流 90度。
+
+---
+
+## Page 4: 交流功率与谐振
+
+**功率**:
+*   瞬时功率 $p = ui$
+*   有功功率 (平均功率) $P = UI \cos\varphi = I^2 R$
+*   无功功率 $Q = UI \sin\varphi = I^2 (X_L - X_C)$
+*   视在功率 $S = UI = \sqrt{P^2+Q^2}$
+*   功率因数 $\cos\varphi = \frac{P}{S} = \frac{R}{|Z|}$
+
+**阻抗**: $Z = R + j(X_L - X_C) = |Z| \angle \varphi$
+
+**串联谐振**:
+条件: $X_L = X_C \Rightarrow \omega_0 L = \frac{1}{\omega_0 C} \Rightarrow f_0 = \frac{1}{2\pi\sqrt{LC}}$
+特征:
+*   阻抗最小 $Z=R$, 纯电阻性。
+*   电流最大。
+*   品质因数 $Q = \frac{U_L}{U} = \frac{\omega_0 L}{R} = \frac{1}{\omega_0 R C}$
+*   $U_L = U_C = Q U$ (电压谐振)
+
+---
+
+## Page 5: 并联谐振
+
+**并联谐振**:
+$R \ll \omega_0 L$ 时，$\omega_0 \approx \frac{1}{\sqrt{LC}}$
+特征:
+*   阻抗最大 $|Z| = \frac{L}{RC}$
+*   总电流最小。
+*   $I_L \approx I_C \approx Q I$ (电流谐振)
+
+通频带 $BW = f_H - f_L \approx \frac{f_0}{Q}$
+$Q$ 越大，选择性越好。
+
+---
+
+## Page 6: 半导体器件
+
+**PN结**:
+*   P型 (空穴多), N型 (电子多)。
+*   正向偏置导通 (电压降 0.6-0.8V, 硅管约0.7V, 锗管0.3V)。
+*   反向偏置截止。
+
+**二极管**:
+主要参数: $I_F$ (最大整流电流), $U_{RM}$ (最高反向工作电压).
+稳压二极管: 工作在反向击穿区。
+
+**三极管 (BJT)**:
+NPN / PNP 型。
+电流关系: $I_E = I_B + I_C$, $I_C = \beta I_B$ (放大区)
+工作区域:
+1.  截止区 ($I_B \approx 0$)
+2.  放大区 ($I_C = \beta I_B$)
+3.  饱和区 ($U_{CE}$ 很小)
+
+微变等效电路: 输入电阻 $r_{be} \approx 200 + (1+\beta) \frac{26}{I_E (mA)}$
+
+---
+
+## Page 7: 放大电路与运算放大器
+
+**共射放大电路**:
+静态分析: $I_B, I_C, U_{CE}$ (估算法/图解法)
+动态分析:
+*   放大倍数 $A_u = \frac{u_o}{u_i} \approx -\frac{\beta R_L'}{r_{be}}$
+*   输入电阻 $R_i = R_b // r_{be}$
+*   输出电阻 $R_o \approx R_c$
+
+**集成运放 (Op-Amp)**:
+理想运放特性:
+*   虚短: $u_+ = u_-$
+*   虚断: $i_+ = i_- = 0$
+
+应用:
+1.  反向比例: $u_o = -\frac{R_f}{R_1} u_i$
+2.  同向比例: $u_o = (1 + \frac{R_f}{R_1}) u_i$
+3.  加法器、减法器、积分器等。
+
+**整流电路**:
+*   半波整流: $U_o = 0.45 U$
+*   桥式整流: $U_o = 0.9 U$
+*   电容滤波: $U_o \approx 1.2 U$
+
+---
+
+## Page 8 & 9: 数字电路
+
+**逻辑代数**:
+*   与 (AND): $Y = AB$
+*   或 (OR): $Y = A+B$
+*   非 (NOT): $Y = \bar{A}$
+*   异或 (XOR): $Y = A \oplus B = \bar{A}B + A\bar{B}$
+
+**化简公式**:
+$A+AB = A$
+$A+\bar{A}B = A+B$
+摩根定律: $\overline{AB} = \bar{A} + \bar{B}$, $\overline{A+B} = \bar{A}\bar{B}$
+
+**卡诺图 (K-map)**:
+圈“1”法化简最简与或式。
+
+**触发器 (Flip-Flops)**:
+1.  **RS触发器**:
+    $Q_{n+1} = S + \bar{R}Q_n$ (约束 $RS=0$)
+2.  **JK触发器**:
+    $Q_{n+1} = J\bar{Q}_n + \bar{K}Q_n$
+3.  **D触发器**:
+    $Q_{n+1} = D$
+4.  **T触发器**:
+    $Q_{n+1} = T \bar{Q}_n + \bar{T} Q_n$ ($T=1$时翻转)

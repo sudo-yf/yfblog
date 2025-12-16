@@ -1,0 +1,154 @@
+---
+title: 期末｜工程力学
+description: 吴同学友情提供
+date: 2025-12-16
+tags:
+  - study
+authors:
+  - yifan
+---
+## Page 1: 应力与变形基础
+
+**基本概念**:
+*   应力 $\sigma = \frac{F}{A}$ (压强)
+*   应变 $\epsilon = \frac{\Delta L}{L}$ (无量纲)
+*   **胡克定律 (弹性定律)**: $\Delta L = \frac{FL}{EA}$ ($E$: 弹性模量, $EA$: 拉压刚度)
+*   强度计算: $\sigma_{\max} = \frac{F_{\max}}{A} \le [\sigma]$
+*   轴力图: 拉为正，压为负。
+*   温度变形: $\Delta L = \alpha \Delta T L$
+*   泊松比: $\nu = \frac{|\epsilon'|}{\epsilon} = \frac{\text{横向变化率}}{\text{长度变化率}}$
+
+**安全系数**: $n_s$, 许用应力 $[\sigma] = \frac{\sigma_{\max}}{n_s}$
+
+**扭转**:
+$\psi \cdot l = \varphi \cdot R$
+剪应变 $\gamma$, 扭转角 $\varphi = \frac{T l}{G I_p}$
+电机功率 $P$: $T (\text{N}\cdot\text{m}) = 9549 \frac{P (\text{kW})}{n (\text{r/min})}$
+剪切胡克定律: $\tau = G \gamma$ ($G = \frac{E}{2(1+\nu)}$)
+切应力 $\tau_{\rho} = \frac{T \rho}{I_p}$ ($\tau \le \tau_p$)
+
+**极惯性矩 $I_p$**:
+$I_p = \int_A \rho^2 dA$
+*   实心圆: $I_p = \frac{\pi D^4}{32}$
+*   空心圆: $I_p = \frac{\pi D^4}{32} (1 - \alpha^4)$ ($\alpha=d/D$)
+最大切应力 $\tau_{\max} = \frac{T}{W_p}$
+抗扭截面系数 $W_p$: 实心 $\frac{\pi D^3}{16}$, 空心 $\frac{\pi D^3}{16}(1-\alpha^4)$
+
+**薄壁圆筒**:
+$\tau = \frac{T}{2 A_0 t}$ ($A_0$: 圆周面积)
+
+**斜截面应力**:
+$\sigma = \sigma \cos^2 \alpha$ (?) 注：此处笔记公式较为简略，通常单向拉伸斜截面 $\sigma_\alpha = \sigma \cos^2 \alpha, \tau_\alpha = \frac{\sigma}{2} \sin 2\alpha$]
+
+**刚度计算**:
+$\theta_{\max} = \frac{T}{G I_p} \le [\theta]$
+满足 $\tau_{\max} \le [\tau]$ 且 $\theta_{\max} \le [\theta]$
+
+---
+
+## Page 2: 应力状态分析
+
+**应力张量**:
+$$ \begin{bmatrix} \sigma_x & \tau_{xy} & \tau_{xz} \\ \tau_{yx} & \sigma_y & \tau_{yz} \\ \tau_{zx} & \tau_{zy} & \sigma_z \end{bmatrix} $$
+切应力互等: $\tau_{xy} = \tau_{yx}$
+
+**主平面与主应力**:
+主平面: 切应力为0的面。
+主应力: $\sigma_1 \ge \sigma_2 \ge \sigma_3$
+
+**薄壁容器**:
+*   轴向应力: $\sigma_m (\pi D \delta) = P \frac{\pi D^2}{4} \Rightarrow \sigma_m = \frac{PD}{4\delta}$
+*   环向应力: $\sigma_t (2 dx \delta) = P D dx \Rightarrow \sigma_t = \frac{PD}{2\delta}$
+
+**二向应力状态 (平面)**:
+斜截面应力:
+$\sigma_\alpha = \frac{\sigma_x+\sigma_y}{2} + \frac{\sigma_x-\sigma_y}{2} \cos 2\alpha - \tau_{xy} \sin 2\alpha$
+$\tau_\alpha = \frac{\sigma_x-\sigma_y}{2} \sin 2\alpha + \tau_{xy} \cos 2\alpha$
+(注：符号约定不同公式会有正负号差异，笔记中使用了莫尔圆图解)
+
+**莫尔圆**:
+圆心 $C(\frac{\sigma_x+\sigma_y}{2}, 0)$, 半径 $R = \sqrt{(\frac{\sigma_x-\sigma_y}{2})^2 + \tau_{xy}^2}$
+主应力:
+$$ \sigma_{\max, \min} = \frac{\sigma_x+\sigma_y}{2} \pm \sqrt{(\frac{\sigma_x-\sigma_y}{2})^2 + \tau_{xy}^2} $$
+最大切应力: $\tau_{\max} = \frac{\sigma_{\max} - \sigma_{\min}}{2}$
+
+**广义胡克定律**:
+$$ \epsilon_1 = \frac{1}{E} [\sigma_1 - \mu(\sigma_2 + \sigma_3)] $$
+$$ \gamma_{xy} = \frac{\tau_{xy}}{G} $$
+平面: $\sigma_x = \frac{E}{1-\mu^2} [\epsilon_x + \mu \epsilon_y]$
+
+---
+
+## Page 3: 强度理论与梁的弯曲
+
+**弹性应变能** $V_\epsilon = W$
+体应变能密度 $V_v$, 形状应变能密度 $V_d$
+总能量密度 $v_\epsilon = v_v + v_d$
+
+**四大强度理论**:
+1.  最大拉应力理论: $\sigma_1 \le [\sigma]$ (脆性材料)
+2.  最大伸长线应变理论: $\sigma_1 - \mu(\sigma_2+\sigma_3) \le [\sigma]$
+3.  最大切应力理论: $\sigma_1 - \sigma_3 \le [\sigma]$ (塑性材料，$\tau_{\max}$判据)
+4.  畸变能密度理论: $\sqrt{\frac{1}{2}[(\sigma_1-\sigma_2)^2 + (\sigma_2-\sigma_3)^2 + (\sigma_3-\sigma_1)^2]} \le [\sigma]$ (Von Mises)
+
+**梁的内力**:
+剪力 $F_s$, 弯矩 $M$
+微分关系: $\frac{dF_s(x)}{dx} = q(x)$, $\frac{dM(x)}{dx} = F_s(x)$
+叠加原理
+
+**截面几何性质**:
+静矩 $S_z = \int_A y dA$, 形心 $y_c = \frac{S_z}{A}$
+惯性矩 $I_z = \int_A y^2 dA$
+平行移轴定理: $I_{z'} = I_z + A d^2$ (其中 $z$ 为形心轴)
+惯性积 $I_{xy} = \int xy dA$ (对称轴则为0)
+
+**常见截面 $I_z$**:
+*   矩形: $\frac{bh^3}{12}$
+*   圆形: $\frac{\pi D^4}{64}$
+抗弯截面系数 $W_z = \frac{I_z}{y_{\max}}$
+弯曲正应力: $\sigma = \frac{M y}{I_z}$, $\sigma_{\max} = \frac{M_{\max}}{W_z}$
+
+---
+
+## Page 4: 弯曲变形与压杆稳定
+
+**弯曲切应力**:
+$\tau = \frac{F_s S_z^*}{b I_z}$ (矩形截面 $\tau_{\max} = \frac{3}{2} \frac{F_s}{A}$, 圆形 $\frac{4}{3}$)
+
+**挠曲线近似微分方程**:
+$E I_z w''(x) = - M(x)$
+$w(x)$: 挠度, $\theta(x) = w'(x)$: 转角
+积分法求变形，边界条件定常数。
+刚度条件: $|w_{\max}| \le [w]$, $|\theta_{\max}| \le [\theta]$
+
+**组合变形**:
+*   拉/压 + 弯曲: $\sigma = \frac{F_N}{A} \pm \frac{M}{W_z}$
+*   偏心拉压: $\sigma = \frac{F_N}{A} \pm \frac{M_y}{I_y} z \pm \frac{M_z}{I_z} y$
+*   弯扭组合:
+    $M_{eq} = \sqrt{M^2 + T^2}$ (第三强度理论)
+    $M_{eq} = \sqrt{M^2 + 0.75 T^2}$ (?) (通常第四强度理论系数不同，笔记此处写了近似公式)
+
+**连接件剪切与挤压**:
+剪切 $\tau = \frac{F}{A} \le [\tau]$
+挤压 $\sigma_{bs} = \frac{F}{A_{bs}} \le [\sigma_{bs}]$ ($A_{bs}$为投影面积)
+
+**压杆稳定**:
+欧拉公式 (临界力):
+$$ F_{cr} = \frac{\pi^2 E I_{\min}}{(\mu l)^2} $$
+$\mu$: 长度系数
+*   两端铰支 $\mu=1$
+*   一端固支一端自由 $\mu=2$
+*   两端固支 $\mu=0.5$
+*   一端固支一端铰支 $\mu \approx 0.7$
+临界应力 $\sigma_{cr} = \frac{\pi^2 E}{\lambda^2}$ ($\lambda = \frac{\mu l}{i}$, 柔度/长细比)
+
+**动荷载**:
+动荷系数 $K_d = 1 + \frac{a}{g}$
+冲击: $K_d = 1 + \sqrt{1 + \frac{2h}{\Delta_{st}}}$
+
+---
+
+## Page 5: 梁的挠度公式 (附录)
+
+悬臂梁受集中力 $F$: $w(x) = \frac{F x^2}{6EI} (3l - x)$
+悬臂梁受均布载荷 $q$: $w(x) = \frac{q x^2}{24EI} (x^2 + 6l^2 - 4lx)$

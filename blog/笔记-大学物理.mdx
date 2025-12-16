@@ -1,0 +1,285 @@
+---
+title: 期末｜电子电路
+description: 吴同学友情提供
+date: 2025-12-16
+tags:
+  - study
+authors:
+  - yifan
+---
+
+## Page 1: 静电场基础
+
+**库仑定律**：
+$$ F = k \frac{q_1 q_2}{r^2} e_r, \quad k = \frac{1}{4\pi\varepsilon_0} $$
+$$ F = \frac{1}{4\pi\varepsilon_0} \frac{q_1 q_2}{r^2} e_r $$
+
+**场强**：
+$$ E = \frac{F}{q} = \frac{Q}{4\pi\varepsilon_0 r^2} e_r $$
+$$ = \int dE = \int \frac{1}{4\pi\varepsilon_0 r^2} dq \cdot e_r \quad (e_r \text{为单位向量}) $$
+电荷元：$dq = \lambda dl, \sigma ds, \rho dv$
+
+**无限长电棒周围电场**：
+$$ E = \frac{\lambda}{2\pi\varepsilon_0 a} \quad \text{向外} $$
+
+**例：圆环轴线电场**
+总电量 $Q$
+$$ dq = \lambda dl = \frac{Q}{2\pi R} dl $$
+$$ dE = \frac{1}{4\pi\varepsilon_0} \frac{dq}{r^2} $$
+$$ E_p = \frac{1}{4\pi\varepsilon_0} \frac{Qx}{(x^2+R^2)^{3/2}} $$
+
+**例：圆盘轴线电场** (面密度 $\sigma$)
+$$ dq = \sigma \cdot 2\pi r dr $$
+$$ dE = \frac{x dq}{4\pi\varepsilon_0 (x^2+r^2)^{3/2}} $$
+$$ E = \int_0^R \frac{x \cdot \sigma 2\pi r dr}{4\pi\varepsilon_0 (x^2+r^2)^{3/2}} = \frac{\sigma}{2\varepsilon_0} (1 - \frac{x}{\sqrt{x^2+R^2}}) $$
+
+**高斯定理**：
+$$ \Phi_e = \oiint_S \vec{E} \cdot d\vec{S} = \frac{1}{\varepsilon_0} \sum q_i = \frac{1}{\varepsilon_0} \int_V \rho dv $$
+
+**特殊几何体电场**：
+*   **球体**：
+    *   内 ($r<R$): $E = \frac{qr}{4\pi\varepsilon_0 R^3}$
+    *   外 ($r>R$): $E = \frac{q}{4\pi\varepsilon_0 r^2}$
+*   **柱体** (线密度 $\lambda$):
+    *   内: $E = \frac{\lambda r}{2\pi\varepsilon_0 R^2}$
+    *   外: $E = \frac{\lambda}{2\pi\varepsilon_0 r}$
+*   **无限大平面**: $E = \frac{\sigma}{2\varepsilon_0}$
+
+**电势**：
+$$ U = \int \vec{E} \cdot d\vec{l} = \int \frac{dq}{4\pi\varepsilon_0 r} $$
+做功：$W = q \Delta U$
+
+*   **球体电势**：
+    *   内: $U = \frac{q}{4\pi\varepsilon_0 R}$ (?) 注：此处笔记可能简写，实心球体内部电势公式较复杂，此处可能指球壳内部等势
+    *   外: $U = \frac{q}{4\pi\varepsilon_0 r}$
+*   **圆环轴线**: $U = \frac{Q}{4\pi\varepsilon_0 \sqrt{x^2+R^2}}$
+*   **圆盘轴线**: $U = \frac{\sigma}{2\varepsilon_0} (\sqrt{R^2+x^2} - x)$
+
+---
+
+## Page 2: 电介质与电场能量
+
+$$ E = -\text{grad } U $$
+$$ \vec{P} = \lim_{\Delta V \to 0} \frac{\sum \vec{p_i}}{\Delta V} \quad (\text{电极化强度}) $$
+
+**极化电荷**：
+*   面极化电荷: $q' = \oiint \vec{P} \cdot d\vec{S}$
+*   介质表面极化电荷密度: $\sigma' = \vec{P} \cdot \vec{n}$ (法线方向)
+
+**总场**：
+$$ \vec{E} = \vec{E_0} + \vec{E'} \quad (\text{外场} + \text{退极化场}) $$
+
+**介质中高斯定理**：
+$$ \oiint_S \vec{D} \cdot d\vec{S} = \sum q_0 \quad (\oint_S \varepsilon_0 \varepsilon_r \vec{E} \cdot d\vec{S} = \sum Q_{0i}) $$
+$\vec{D} = \varepsilon_0 \vec{E} + \vec{P}$ (电位移矢量)
+对各向同性介质: $\vec{D} = \varepsilon \vec{E}$, $\varepsilon = \varepsilon_0 \varepsilon_r$ (介质电容率)
+
+**电容**：
+$$ C = \frac{q}{U} $$
+*   串联: $\frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2} \Rightarrow C = \frac{C_1 C_2}{C_1+C_2}$ (注意笔记中距离 $d_1, d_2$ 的示意)
+*   并联: $C = C_1 + C_2$ (面积 $S_1, S_2$)
+
+**能量**：
+做功 $A = \int_0^Q U dq = \int_0^Q \frac{q}{C} dq = \frac{1}{2} \frac{Q^2}{C}$
+任意电容器储能 $W = \frac{1}{2} \frac{Q^2}{C} = \frac{1}{2} CU^2 = \frac{1}{2} UQ$
+
+**电场能量密度**：
+$$ w_e = \frac{dW}{dV} = \frac{1}{2} \varepsilon E^2 $$
+$$ W_{\text{总}} = \int_V w_e dV = \int_V \frac{1}{2} \varepsilon E^2 dV $$
+
+**平板电容**：
+$E = \frac{\sigma}{\varepsilon}$
+$U_a - U_b = Ed = \frac{q}{\varepsilon S} d$
+$C = \frac{q}{U_{ab}} = \frac{\varepsilon S}{d}$
+即：计算 $E \to U (\int \vec{E} \cdot d\vec{l}) \to C (\frac{q}{U})$
+
+---
+
+## Page 3: 稳恒磁场
+
+**毕奥-萨伐尔定律 (Biot-Savart Law)**：
+$$ dB = \frac{\mu}{4\pi} \frac{I d\vec{l} \times \vec{r}}{r^3} \quad \text{或} \quad dB = \frac{\mu}{4\pi} \frac{I dl \sin\alpha}{r^2} $$
+$\mu = \mu_0 \mu_r$
+
+**长直导线磁场**：
+$$ dB = \frac{\mu_0}{4\pi} \frac{I dx \sin\alpha}{r^2} $$
+换元: $x = a \tan\beta, dx = \frac{a d\beta}{\cos^2\beta}, r = \frac{a}{\cos\beta}, \alpha = \frac{\pi}{2} + \beta$
+$$ B = \frac{\mu_0 I}{4\pi a} \int_{\beta_1}^{\beta_2} \cos\beta d\beta \xrightarrow{\text{无限长}} \frac{\mu_0 I}{2\pi a} $$
+
+**圆环中心轴线磁场**：
+$$ dB = \frac{\mu_0}{4\pi} \frac{I dl \sin\alpha}{r^2} \quad (\alpha=90^\circ) $$
+$$ dB_{\text{轴}} = \frac{\mu_0 I}{4\pi r^2} \oint dl \cdot \sin\theta $$
+$$ B = \frac{\mu_0 I R^2}{2 r^3} = \frac{\mu_0 I R^2}{2(R^2+x^2)^{3/2}} $$
+
+**运动电荷**：
+$I = q n S v \Rightarrow I d\vec{l} = q n S v d\vec{t} = (n S dl) q \vec{v} = dN q \vec{v}$
+磁矩: $\vec{P_m} = I S \vec{n}$
+大小: $P_m = IS$
+单电荷B: $\vec{B} = \frac{d\vec{B}}{dN} = \frac{\mu}{4\pi} \frac{dN q \vec{v} \times \vec{r}}{r^3 dN} = \frac{\mu}{4\pi} \frac{q \vec{v} \times \vec{r}}{r^3}$
+单电荷I: $I = \frac{\Delta q}{\Delta t} = f q = \frac{q}{T}$
+
+**磁通量**：
+$\Phi_m = \iint_S \vec{B} \cdot d\vec{S} = \iint_S B \cos\theta ds$
+
+**安培环路定理**：
+$$ \oint_L \vec{B} \cdot d\vec{l} = \mu_0 \sum I_i \quad (\text{包围内}) $$
+
+**同轴电缆 (Cylindrical Shell)**：
+*   外 ($r>R$): $B = \frac{\mu_0 I}{2\pi r}$
+*   内 ($r<R$): $B = \frac{\mu_0 I r}{2\pi R^2}$
+    推导: $\oint \vec{B} \cdot d\vec{l} = \mu_0 \sum I_i$
+    $B \cdot 2\pi r = \mu_0 I \frac{\pi r^2}{\pi R^2} \Rightarrow B = \frac{\mu_0 I r}{2\pi R^2}$
+
+---
+
+## Page 4: 磁场力与电磁感应
+
+**螺线管**：
+*   内: $B = \mu_0 n I$
+*   外: $B \approx 0$
+**螺绕环**: $B = \frac{\mu_0 N I}{2\pi r}$
+
+**磁对电 (洛伦兹力)**：
+$\vec{F} = q \vec{v} \times \vec{B}$
+匀速圆周运动: $qvB = m \frac{v^2}{R} \Rightarrow R = \frac{mv}{qB}, T = \frac{2\pi R}{v} = \frac{2\pi m}{qB}$
+一般情况: $\vec{F} = q\vec{E} + q\vec{v} \times \vec{B}$
+
+**霍尔效应**: $U_H = K_H \frac{IB}{d}, K_H = \frac{1}{nq}$ (霍尔系数，q正负则正负)
+
+**安培力**:
+$d\vec{F} = I d\vec{l} \times \vec{B}$
+$\vec{F} = I \vec{L} \times \vec{B}$ (任意形状导线首尾相连直线电流受力，均匀磁场)
+
+**磁做功**: $A = I \Delta \Phi$ ($I \int d\Phi$)
+
+**感应电动势**:
+$\mathcal{E} = - \frac{d\Phi}{dt}$
+$\int \vec{E_k} d\vec{l} = - \int_S \frac{\partial \vec{B}}{\partial t} d\vec{S}$
+动生电动势: $\mathcal{E} = \frac{F_m}{q} = \int (\vec{v} \times \vec{B}) \cdot d\vec{l}$
+
+**自感与互感**:
+*   自感: $L = \frac{\Phi}{I}$, $\mathcal{E}_L = -L \frac{dI}{dt}$ (磁链 $\Psi = N\Phi$)
+*   互感: $M = \frac{\Psi_{21}}{I_1} = \frac{\Psi_{12}}{I_2}$
+    $\mathcal{E}_{21} = -M \frac{dI_1}{dt}$, $\mathcal{E}_{12} = -M \frac{dI_2}{dt}$
+
+**磁能**:
+$W_L = \frac{1}{2} L I^2$
+$W_{12} = \int \mathcal{E}_{12} I_1 dt = M I_1 I_2 = W_{21}$
+磁能密度: $w_m = \frac{1}{2} \frac{B^2}{\mu} = \frac{1}{2} BH = \frac{1}{2} \mu H^2$ ($B=\mu H$)
+磁场总能: $W_m = \int w_m dV$
+(对比电场能量密度 $w_e = \frac{\varepsilon E^2}{2}$)
+
+---
+
+## Page 5: 麦克斯韦方程组
+
+**介质中的安培环路定理**：
+$\oint_L \vec{B} \cdot d\vec{l} = \mu_0 (\sum I + I')$
+$\Rightarrow \oint_L (\frac{\vec{B}}{\mu_0} - \vec{M}) d\vec{l} = \sum I$
+$\Rightarrow \oint_L \vec{H} d\vec{l} = \sum I$ ($\vec{H}$: 磁场强度矢量)
+各向同性介质: $\vec{M} = \chi_m \vec{H}$ ($\chi_m$: 磁化率)
+$\vec{B} = \mu_0 (1 + \chi_m) \vec{H} \Rightarrow \mu \vec{H}$ ($\mu = \mu_0 \mu_r$)
+
+**位移电流**: $I_d = \frac{d\Phi_D}{dt}$
+电流密度: $\vec{j_d} = \frac{\partial \vec{D}}{\partial t}$
+全电流定律: $\oint_L \vec{H} \cdot d\vec{l} = I_{\text{全}} = I + \frac{d\Phi_D}{dt} = \iint_S (\vec{j} + \vec{j_d}) \cdot d\vec{S}$
+($+ S \frac{dD}{dt} \sim \varepsilon_0 \frac{dE}{dt}$)
+
+**电磁场总结 (麦克斯韦方程组)**：
+1.  $\oint_L \vec{E} \cdot d\vec{l} = -\iint_S \frac{\partial \vec{B}}{\partial t} \cdot d\vec{S}$ (法拉第电磁感应，变磁生电)
+2.  $\oint_L \vec{H} \cdot d\vec{l} = \sum I_i + \iint_S \frac{\partial \vec{D}}{\partial t} \cdot d\vec{S}$ (安培-麦克斯韦，变电生磁)
+3.  $\oiint_S \vec{D} \cdot d\vec{S} = \sum q_i$ (高斯定理，有源)
+4.  $\oiint_S \vec{B} \cdot d\vec{S} = 0$ (磁通连续，无源)
+
+辅助方程：
+$\vec{D} = \varepsilon \vec{E}$
+$\vec{B} = \mu \vec{H}$
+$\vec{J} = \sigma \vec{E}$ (欧姆定律微分形式)
+
+**微分形式**：
+$\nabla \cdot \vec{D} = \rho$
+$\nabla \cdot \vec{B} = 0$
+$\nabla \times \vec{E} = - \frac{\partial \vec{B}}{\partial t}$
+$\nabla \times \vec{H} = \vec{J} + \frac{\partial \vec{D}}{\partial t}$
+
+---
+
+## Page 6: 电磁波
+
+$$ E = E_0 \cos \omega (t - \frac{x}{v}) $$
+$$ H = H_0 \cos \omega (t - \frac{x}{v}) $$
+振幅关系: $\sqrt{\varepsilon} E_0 = \sqrt{\mu} H_0$
+波速: $v = \frac{1}{\sqrt{\varepsilon \mu}}$, 真空中 $c = \frac{1}{\sqrt{\varepsilon_0 \mu_0}}$
+$v = \frac{c}{\sqrt{\varepsilon_r \mu_r}}$
+
+**能量密度**: $w = w_e + w_m = (\vec{D}\cdot\vec{E} + \vec{B}\cdot\vec{H}) \frac{1}{2} = \varepsilon E^2$ (或 $\frac{B^2}{\mu}$)
+**坡印廷矢量 (能流密度)**:
+$\vec{S} = \vec{E} \times \vec{H}$
+方向：波传播方向。
+
+---
+
+## Page 7: 相对论与量子物理基础
+
+**相对论 (Relativity)**：
+$S'$ 系相对 $S$ 系沿 $x$ 轴以 $v$ 运动:
+洛伦兹变换:
+$$ x' = \frac{x-vt}{\sqrt{1-v^2/c^2}}, \quad y'=y, \quad z'=z $$
+$$ t' = \frac{t - \frac{v}{c^2}x}{\sqrt{1-v^2/c^2}} $$
+速度变换:
+$u_x' = \frac{u_x - v}{1 - u_x v / c^2}$
+$u_y' = \frac{u_y \sqrt{1-v^2/c^2}}{1 - u_x v / c^2}$
+
+**效应**：
+*   同时的相对性
+*   时间膨胀: $\Delta t = \frac{\Delta t_0}{\sqrt{1-\beta^2}} = \gamma \Delta t_0$ ($\Delta t \ge \Delta t_0$)
+*   长度收缩: $L' = L_0 \sqrt{1-\beta^2}$ ($L \le L_0$)
+*   动质量: $m = \frac{m_0}{\sqrt{1-v^2/c^2}}$
+*   能量: $E = E_k + E_0 = (m c^2 - m_0 c^2) + m_0 c^2 = m c^2$
+*   动量能量关系: $E^2 = E_0^2 + (pc)^2 = (m_0 c^2)^2 + p^2 c^2$
+*   力: $\vec{F} = \frac{d(m\vec{v})}{dt} = m \frac{d\vec{v}}{dt} + \vec{v} \frac{dm}{dt}$
+
+**量子物理基础**：
+$\lambda_m T = b$ (维恩位移定律, $b=2.898 \times 10^{-3} mK$)
+$E_n = n \varepsilon, n=1,2...$ (普朗克量子假说)
+$\varepsilon = h \nu$ (能量子，普朗克常数 $h=6.63 \times 10^{-34} J \cdot s$)
+
+**光电效应**:
+$\varepsilon = h \nu = \frac{1}{2} m v_m^2 + W$ (逸出功)
+红限 $\nu_0 = \frac{W}{h}$
+遏止电压 $e V_a = \frac{1}{2} m v_m^2 \Rightarrow V_a = \frac{h}{e} \nu - \frac{W}{e}$
+
+**光子说**:
+$E = h \nu = m c^2$
+质量 $m = \frac{h \nu}{c^2} = \frac{h}{\lambda c}$, 静质量 $m_0 = 0$
+动量 $p = mc = \frac{h}{\lambda}$
+
+**康普顿散射**:
+$\lambda - \lambda_0 = \frac{2h}{m_0 c} \sin^2 \frac{\varphi}{2} = 2 \Lambda \sin^2 \frac{\varphi}{2}$
+$\Lambda = 2.41 \times 10^{-12} m$
+
+常数: $e=1.602 \times 10^{-19} C$, $m_e = 9.1 \times 10^{-31} kg$, $1 eV = 1.602 \times 10^{-19} J$
+
+---
+
+## Page 8: 量子力学初步
+
+**玻尔模型**:
+能级 $E_n = \frac{E_1}{n^2} = \frac{-13.6}{n^2} eV$
+半径 $r_n = n^2 r_1$
+角动量量子化: $L = mvr = n \hbar$
+德布罗意波: $\lambda = \frac{h}{p} = \frac{h}{mv}$
+不确定度关系: $\Delta x \Delta p \ge \hbar$ (或 $h$, $\frac{h}{2}$, $\frac{\hbar}{2}$)
+
+**量子数 (原子)**：
+1.  主量子数 $n$
+2.  角量子数 $l$: $l = 0, 1, ... n-1$. $L = \sqrt{l(l+1)} \hbar$
+3.  磁量子数 $m_l$: $m_l = 0, \pm 1, ... \pm l$. $L_z = m_l \hbar$
+4.  自旋量子数 $m_s$: $m_s = \pm \frac{1}{2}$. $S_z = m_s \hbar$
+电子可能状态数 $2n^2$
+
+**一维无限深势阱**:
+能量 $E_n = \frac{n^2 h^2}{8 m a^2}$
+波函数 $\psi_n(x) = \sqrt{\frac{2}{a}} \sin(\frac{n\pi x}{a}) \quad (0 \le x \le a)$
+
+常数: $c \approx 2.9979 \times 10^8 m/s$
