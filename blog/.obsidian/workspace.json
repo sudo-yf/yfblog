@@ -27,36 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "12.17.mdx",
+                "file": "笔记-大化速成.mdx",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "12.17"
+              "title": "笔记-大化速成"
             }
           }
         ],
         "currentTab": 1
-      },
-      {
-        "id": "51f90a7fd4fb9bd6",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "4aaf8950b0bd23a4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "12.17.mdx",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "12.17"
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -218,11 +198,13 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "4aaf8950b0bd23a4",
+  "active": "31c939c662c49d7e",
   "lastOpenFiles": [
+    "12.17.mdx",
+    "笔记-大化速成.mdx",
+    "未命名.md",
     "assets/0d34655a12b3dcf7109922f8963ff292.jpg",
     "12.15.mdx",
-    "12.17.mdx",
     "12.17.md",
     "12.16.mdx",
     "笔记-公式速查.mdx",
@@ -251,7 +233,6 @@
     "Study/scut-study/12-14.md",
     "Study/scut-study/assets/Pasted image 20251213042435.png",
     "SCUT-study/12-14 2.md",
-    "SCUT-study/assets/Pasted image 20251213052047.png",
     "SCUT-study/12-14 1.md",
     "SCUT-study/12-14 3.md",
     "工程力学/组合变形.canvas",
